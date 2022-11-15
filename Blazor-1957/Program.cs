@@ -1,3 +1,4 @@
+using System.Globalization;
 using Blazor_1957.Data;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
@@ -26,6 +27,9 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor()
     .AddMicrosoftIdentityConsentHandler();
 builder.Services.AddSingleton<WeatherForecastService>();
+
+CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("sv-SE");
+CultureInfo.DefaultThreadCurrentUICulture = new CultureInfo("sv-SE");
 
 var app = builder.Build();
 
